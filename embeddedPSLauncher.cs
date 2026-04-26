@@ -86,7 +86,7 @@ namespace embeddedPowerShellScript
 				try
 				{
 					//Attempt to change the execution policy 
-					powershellObject.AddCommand("Set-ExecutionPolicy").AddParameter("-ExecutionPolicy","Sypass").AddParameter("-Scope","Process").Invoke();
+					powershellObject.AddCommand("Set-ExecutionPolicy").AddParameter("-ExecutionPolicy","Bypass").AddParameter("-Scope","Process").Invoke();
 				} //Ends the try 
 				//Catch 
 				catch 
