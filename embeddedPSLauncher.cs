@@ -39,7 +39,7 @@ namespace embeddedPowerShellScript
 				
 				//Create the path to the powershell file
 				string powershellScriptFilePath = System.IO.Path.Combine(tempFolderPath, exeName);
-				powershellScriptFilePath = "\"" + powershellScriptFilePath + ".ps1\"";
+				powershellScriptFilePath = "" + powershellScriptFilePath + ".ps1";
 				
 				//If the script file exists, delete it, keeps issues from happening with file already being present 
 				if(File.Exists(powershellScriptFilePath) == true) { File.Delete(powershellScriptFilePath); }
@@ -61,7 +61,7 @@ namespace embeddedPowerShellScript
 				rStream.Close();
 				
 				//Check to see if the script exists
-				if(System.IO.File.Exists(powershellScriptFilePath))
+				if(System.IO.File.Exists(powershellScriptFilePath) == false)
 				{
 					//Throw the exception
 					throw new Exception("Unable to find the PowerShell Script File: " + powershellScriptFilePath + ".");
